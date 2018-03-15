@@ -1,0 +1,20 @@
+﻿@model List<Week24_Views.Models.Product>
+
+<h1>All Products</h1>
+<ul>
+    @foreach (var product in @Model)
+    {
+        <li>
+            
+            <a href="~/Product/Details/@product.ProductId">@product.Name</a>
+            
+    
+        @if (product.Price < 150)
+        {
+            <text>BARGAIN!</text>
+        }
+
+        </li>
+    }
+</ul>
+
