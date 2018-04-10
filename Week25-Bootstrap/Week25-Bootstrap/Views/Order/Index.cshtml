@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>View order # @Model.OrderId</h2>
+<h2>View order <span class="label label-primary"># @Model.OrderId</span></h2>
 
 <h3>Customer Details</h3>
 
@@ -38,7 +38,11 @@
 <h3>Order details</h3>
 
 <p><strong>Date received:</strong> @Model.DateReceived.ToString("dd/MM/yyyy")</p>
-<p><strong>Date dispatched:</strong> @Model.DateDispatched.ToString("dd/MM/yyyy")</p>
+<p class="alert-success">
+    <strong>Date dispatched:</strong>
+    @Model.DateDispatched.ToString("dd/MM/yyyy")
+</p>
+
 
 <table>
 
