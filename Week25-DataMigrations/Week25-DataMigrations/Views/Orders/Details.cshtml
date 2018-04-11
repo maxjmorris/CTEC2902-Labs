@@ -27,6 +27,13 @@
         </dd>
 
     </dl>
+    <dl>
+        @foreach (var orderItem in @Model.OrderItems)
+        {
+            <dt>@orderItem.Product.Name</dt>
+            <dt>@orderItem.Product.Price</dt>
+        }
+    </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.OrderId }) |

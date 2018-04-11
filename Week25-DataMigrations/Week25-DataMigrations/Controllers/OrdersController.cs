@@ -27,7 +27,7 @@ namespace Week25_DataMigrations.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.Orders.Find(id);
+            Order order = db.Orders.Where(o => o.OrderId == id).Include(o => o.OrderItems).FirstOrDefault();
             if (order == null)
             {
                 return HttpNotFound();
